@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.paddingTop = '0px';
         } else {
             headerTop.classList.remove('menu-open');
-            const paddingTop = window.innerWidth <= 968 ? '80px' : '96px';
-            document.body.style.paddingTop = paddingTop;
+            document.body.style.paddingTop = '0px'; // Убираем padding-top при закрытии меню
         }
     }
 
@@ -32,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             burger.classList.remove('active');
             mobileMenu.classList.remove('active');
             body.classList.remove('menu-open');
+            document.body.style.paddingTop = '0px'; // Убираем padding-top
         });
     });
 
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             burger.classList.remove('active');
             mobileMenu.classList.remove('active');
             body.classList.remove('menu-open');
+            document.body.style.paddingTop = '0px'; // Убираем padding-top
         }
     });
 
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             burger.classList.remove('active');
             mobileMenu.classList.remove('active');
             body.classList.remove('menu-open');
+            document.body.style.paddingTop = '0px'; // Убираем padding-top
         }
     });
 
