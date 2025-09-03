@@ -346,14 +346,16 @@ body{
     right: 0;
 }
 
-.header__mobile-menu.active ~ .header,
-.header__mobile-menu.active ~ .header .header__top,
-.header__mobile-menu.active ~ .header .header__bottom {
-    position: static;
+.header__mobile-menu.active ~ .header .header__top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
 }
 
 .header:has(.header__mobile-menu.active) {
-    position: static;
+    position: relative;
 }
 
 /* Дополнительные стили для мобильного меню 
@@ -366,13 +368,13 @@ body{
 }
 
 .header__mobile-menu-content {
-    padding: 110px 24px 24px;
+    padding: 80px 24px 24px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     /* Учитываем safe-area для мобильного меню */
-    padding-top: max(110px, calc(110px + env(safe-area-inset-top)));
+    padding-top: max(80px, calc(80px + env(safe-area-inset-top)));
 }
 
 .header__mobile-nav-list {
@@ -1936,9 +1938,9 @@ body{
         justify-content: space-between;
         gap: 20px;
         margin-bottom: 20px;
-        height: calc(100vh - 120px); /* Высота минус хедер */
-        height: calc(100dvh - 120px); /* Динамическая высота */
-        height: calc(-webkit-fill-available - 120px); /* Для Safari */
+        min-height: calc(100vh - 95px); /* Минимальная высота минус хедер (75px + отступы) */
+        min-height: calc(100dvh - 95px); /* Динамическая высота */
+        min-height: calc(-webkit-fill-available - 95px); /* Для Safari */
     }
     
     .header__bottom-cta {
@@ -2045,9 +2047,9 @@ body{
         gap: 16px;
         margin-bottom: 15px;
         justify-content: space-between;
-        height: calc(100vh - 100px); /* Высота минус хедер */
-        height: calc(100dvh - 100px); /* Динамическая высота */
-        height: calc(-webkit-fill-available - 100px); /* Для Safari */
+        min-height: calc(100vh - 95px); /* Минимальная высота минус хедер (75px + отступы) */
+        min-height: calc(100dvh - 95px); /* Динамическая высота */
+        min-height: calc(-webkit-fill-available - 95px); /* Для Safari */
     }
     
     .header__title {
