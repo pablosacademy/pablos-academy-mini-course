@@ -88,9 +88,30 @@ html{
     }
 }
 
+/* Safari safe area support for all devices */
+@supports (padding: max(0px)) {
+    .header__top {
+        padding-top: max(20px, var(--safe-area-inset-top));
+    }
+    
+    .footer {
+        padding-bottom: max(32px, calc(32px + var(--safe-area-inset-bottom)));
+    }
+    
+    .contact__form {
+        margin-bottom: max(0px, var(--safe-area-inset-bottom));
+    }
+    
+    .header__mobile-menu {
+        padding-bottom: var(--safe-area-inset-bottom);
+    }
+}
+
 body{
     overflow-x: hidden;
     min-height: 100vh;
+    /* Safari safe area support for bottom */
+    padding-bottom: var(--safe-area-inset-bottom);
 }
 
 .color{
@@ -321,6 +342,8 @@ body{
     z-index: 999;
     transition: right 0.3s ease;
     overflow-y: auto;
+    /* Safari safe area support for bottom */
+    padding-bottom: var(--safe-area-inset-bottom);
 }
 
 .header__mobile-menu.active {
@@ -1172,6 +1195,8 @@ body{
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 64px 0 32px;
+    /* Safari safe area support for bottom */
+    padding-bottom: max(32px, calc(32px + var(--safe-area-inset-bottom)));
 }
 
 .footer__container{
@@ -1277,6 +1302,8 @@ body{
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
+    /* Safari safe area support */
+    padding-bottom: var(--safe-area-inset-bottom);
 }
 
 .video-modal.active {
@@ -1345,6 +1372,8 @@ body{
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
+    /* Safari safe area support */
+    padding-bottom: var(--safe-area-inset-bottom);
 }
 
 .course-modal.active {
@@ -1590,6 +1619,8 @@ body{
     box-shadow: inset 2px 2.00046px 9px rgba(255, 255, 255, 0.12), inset 1px 1px 4px rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(17.5px);
     border-radius: 36px;
+    /* Safari safe area support for bottom */
+    margin-bottom: var(--safe-area-inset-bottom);
 }
 
 .contact__form-title{
@@ -1815,6 +1846,8 @@ body{
         height: auto;
         padding: 32px 24px;
         gap: 24px;
+        /* Safari safe area support for mobile */
+        margin-bottom: max(16px, var(--safe-area-inset-bottom));
     }
 
     .contact__form-title{
@@ -1919,6 +1952,8 @@ body{
     .contact__form {
         padding: 32px 24px;
         margin: 0 16px;
+        /* Safari safe area support for mobile */
+        margin-bottom: max(16px, var(--safe-area-inset-bottom));
     }
     
     .contact__form-title {
