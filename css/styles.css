@@ -66,6 +66,12 @@
     --container-padding: 24px;
 
     --transition: .3s ease-in-out;
+    
+    /* Safe area insets for iOS devices */
+    --safe-area-inset-top: env(safe-area-inset-top, 0px);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-inset-left: env(safe-area-inset-left, 0px);
+    --safe-area-inset-right: env(safe-area-inset-right, 0px);
 }
 
 html{
@@ -138,6 +144,8 @@ body{
     background: rgba(0, 0, 0, 0.05);
     background-blend-mode: plus-lighter;
     backdrop-filter: blur(10px);
+    /* Safari safe area support */
+    padding-top: max(20px, var(--safe-area-inset-top));
 }
 
 .header__bottom{
@@ -344,6 +352,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    /* Safari safe area support for mobile menu */
+    padding-top: max(110px, calc(110px + var(--safe-area-inset-top)));
 }
 
 .header__mobile-nav-list {
@@ -1868,6 +1878,8 @@ body{
     
     .header__top {
         padding: var(--container-padding);
+        /* Safari safe area support for mobile */
+        padding-top: max(var(--container-padding), var(--safe-area-inset-top));
     }
 }
 
@@ -1875,6 +1887,8 @@ body{
     .header {
         background-image: url(../img/hero-bg-mobile.webp);
         padding-bottom: 20px;
+        /* Ensure header content is not hidden by Safari UI */
+        padding-top: var(--safe-area-inset-top);
     }
     
     .header__bottom {
