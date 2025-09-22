@@ -1567,6 +1567,7 @@ body{
     align-items: center;
     gap: 12px;
     margin-bottom: 16px;
+    font-family: var(--font-space-grotesk);
 }
 
 .about-mentor-info-help > div svg {
