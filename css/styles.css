@@ -140,10 +140,6 @@ body{
 }
 
 .header__top{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -156,6 +152,12 @@ body{
     backdrop-filter: blur(10px);
     /* Учитываем safe-area для Safari */
     padding-top: max(20px, env(safe-area-inset-top));
+}
+.header__top .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
 }
 
 .header__bottom{
@@ -406,10 +408,10 @@ body{
 .header__mobile-nav-link {
     color: var(--color-white);
     font-family: var(--font-benzin);
-    font-size: 46px;
+    font-size: 30px;
     transition: color 0.3s ease;
     display: block;
-    padding: 24px 0;
+    padding: 19px 0;
     border-bottom: 1px solid #383838;
 }
 
@@ -1566,6 +1568,8 @@ body{
     display: flex;
     align-items: center;
     gap: 12px;
+    
+    font-family: var(--font-space-grotesk);
     margin-bottom: 16px;
 }
 
@@ -1932,20 +1936,34 @@ body{
     }
     
     .header__top {
-        padding: var(--container-padding);
+        padding: 15px 0;
         /* Учитываем safe-area */
-        padding-top: max(var(--container-padding), env(safe-area-inset-top));
-        height: 75px;
     }
 }
 
 @media (max-width: 768px) {
     .header {
         background-image: url(../img/hero-bg-mobile.webp);
-        padding-bottom: 0;
+        background-position: center;
         height: 670px; /* Фиксированная высота 670px для всех мобильных устройств */
         min-height: 670px;
         padding-top: 0; /* Убираем отступ сверху */
+        position: relative;
+    }
+    
+    .header::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10rem;
+        background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, transparent 100%);
+    }
+    
+    .header__title {
+        margin-top: 100px;
+        text-align: center;
     }
     
     .header__bottom {
@@ -1962,6 +1980,10 @@ body{
         margin-top: auto; /* Прижимаем CTA к низу */
     }
     
+    .header__bottom {
+        position: relative;
+        z-index: 20;
+    }
     .header__bottom-content {
         margin-bottom: auto; /* Прижимаем заголовок к верху */
     }
@@ -2048,10 +2070,11 @@ body{
 
 @media (max-width: 480px) {
     .header {
-        padding-bottom: 0;
+        padding-bottom: 30px;
         height: 670px; /* Фиксированная высота 670px для всех мобильных устройств */
         min-height: 670px;
         padding-top: 0; /* Убираем отступ сверху */
+        background-position: top center;
     }
     
     .header__bottom {
@@ -2063,7 +2086,9 @@ body{
     
     .header__title {
         font-size: clamp(28px, 10vw, 48px);
-        margin-top: 75px;
+        margin-top: 100px;
+        text-align: center;
+
     }
     
     .header__bottom-text {

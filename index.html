@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Pablos Academy Course</title>
-    <link rel="stylesheet" href="./css/styles.css?v=2">
+    <link rel="stylesheet" href="./css/styles.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet">
@@ -55,44 +55,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     <header class="header">
-        <div class="header__top container">
-            <div class="header__left">
-                <div class="header__logo">
-                    <img src="./img/logo.webp" alt="logo" width="145" height="55" class="header__logo-img">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__left">
+                    <div class="header__logo">
+                        <img src="./img/logo.webp" alt="logo" width="145" height="55" class="header__logo-img">
+                    </div>
+                </div>
+
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="#about-mentor" class="header__nav-link">Про ментора</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#target-audience" class="header__nav-link">Для кого</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#program" class="header__nav-link">Програма</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#faq" class="header__nav-link">Питання</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#contact" class="header__nav-link">Контакти</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header__right">
+                    <a href="#contact" class="header__cta">
+                        <span class="header__cta-text">Приєднатись</span>
+                        <svg class="header__cta-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M18.5 5.5v13h-3v-7.883l-9.09 9.09-2.117-2.117 9.09-9.09H5.5v-3z" fill="#101010" stroke="#101010"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></svg>
+                    </a>
+
+                    <button class="header__burger" type="button" aria-label="Открыть меню">
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                    </button>
                 </div>
             </div>
-
-            <nav class="header__nav">
-                <ul class="header__nav-list">
-                    <li class="header__nav-item">
-                        <a href="#about-mentor" class="header__nav-link">Про ментора</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="#target-audience" class="header__nav-link">Для кого</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="#program" class="header__nav-link">Програма</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="#faq" class="header__nav-link">Питання</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="#contact" class="header__nav-link">Контакти</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="header__right">
-                <a href="#contact" class="header__cta">
-                    <span class="header__cta-text">Приєднатись</span>
-                    <svg class="header__cta-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M18.5 5.5v13h-3v-7.883l-9.09 9.09-2.117-2.117 9.09-9.09H5.5v-3z" fill="#101010" stroke="#101010"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></svg>
-                </a>
-
-                <button class="header__burger" type="button" aria-label="Открыть меню">
-                    <span class="header__burger-line"></span>
-                    <span class="header__burger-line"></span>
-                </button>
-            </div>
+            
         </div>
 
         <div class="header__bottom container">
@@ -780,9 +783,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Попап для благодарности -->
 <div id="thankYouPopup">
     <div class="popup-content">
-        <div class="modal__title">Ми вже готуємося з тобою зв’язатися та розповісти все детально.</div>
-        <div class="modal__subtitle">Щоб залишатися в курсі новин і регулярно отримувати інсайти з арбітражу — заходь у наш Telegram-канал.</div>
-        <a href="https://t.me/pablos_academy" target="_blank">Перейти до каналу</a>
+        <div class="modal__title">🚀 Ти вже <br>на фінішній прямій!</div>
+        <div class="modal__subtitle">Натискай кнопку та отримуй <br>доступ до курсу.</div>
+        <a href="https://t.me/PablosCourseBot?start=ZGw6Mjg5NDA1" target="_blank">ПЕРЕЙТИ ДО КУРСУ</a>
     </div>
 </div>
 
