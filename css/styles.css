@@ -997,11 +997,12 @@ body{
 .target-audience__text{
     font-family: var(--font-benzin);
     font-size: clamp(17px, 4vw, 29px);
+    font-weight: var(--font-weight-bold);
     color: var(--color-white);
     line-height: 125%;
     width: clamp(327px, 88vw, 670px);
     text-transform: uppercase;
-    font-weight: var(--font-weight-bold);
+    
 }
 
 /* FAQ Styles */
