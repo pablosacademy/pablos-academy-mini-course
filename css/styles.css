@@ -162,12 +162,14 @@ body{
 
 .header__bottom{
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
     margin-top: auto;
     margin-bottom: auto;
     padding-top: 80px;
+    gap: 40px;
 }
 
 .header__hero-wrapper{
@@ -258,7 +260,7 @@ body{
 }
 
 .header__price-wrapper{
-    background: rgba(58, 57, 57, 0.9);
+    background: rgba(58, 57, 57, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 16px 20px;
@@ -340,6 +342,7 @@ body{
     width: 100%;
     max-width: 520px;
     height: 112px;
+    margin-bottom: 0;
 }
 
 .header__bonus-image{
@@ -355,6 +358,9 @@ body{
     width: 100%;
     height: 100%;
     object-fit: contain;
+    width: 45px;
+    height: 45px;
+
 }
 
 .header__bonus-text{
@@ -376,7 +382,9 @@ body{
     justify-content: center;
     color: var(--color-black);
     box-sizing: border-box;
+    display: none; /* Скрыта на десктопе по умолчанию */
 }
+
 
 .header__nav{
     display: flex;
@@ -649,8 +657,33 @@ body{
     object-fit: contain;
 }
 
-.header__bottom-cta__button{
+.header__bottom-cta {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.header__bottom-cta--sticky {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    max-width: calc(100% - 48px) !important;
+    padding: 12px 24px !important;
+    z-index: 1000 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+}
+
+.header__bottom-cta__button{
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
@@ -663,6 +696,9 @@ body{
     font-weight: var(--font-weight-bold);
     font-size: 20px;
     transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+    min-width: fit-content;
 }
 
 .header__cta-text{
@@ -670,9 +706,14 @@ body{
 }
 
 
-.header__bottom-cta__text{
+.header__bottom-cta-text {
     font-weight: var(--font-weight-bold);
-    margin-top: 3px;
+}
+
+.header__bottom-cta-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-black);
 }
 
 .header__bottom-cta__icon{
@@ -1189,7 +1230,14 @@ body{
 .why-section {
     position: relative;
     background-color: var(--color-black);
-    overflow: hidden;
+    padding-bottom: 120px;
+    min-height: auto;
+    overflow: visible;
+}
+
+.why-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .why-section::before {
@@ -1216,9 +1264,45 @@ body{
     z-index: 1;
 }
 
-.why-section__cta {
-    display: inline-flex;
+.why-section__bottom {
+    display: flex !important;
+    justify-content: center;
     align-items: center;
+    margin-top: 48px;
+    padding: 20px 0;
+    z-index: 10;
+    width: 100%;
+    min-height: 60px;
+    transition: all 0.3s ease;
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+}
+
+.why-section__bottom--sticky {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    max-width: calc(100% - 48px) !important;
+    margin-top: 0 !important;
+    padding: 12px 24px !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1000 !important;
+}
+
+.why-section__bottom--sticky .why-section__cta {
+    margin: 0;
+}
+
+.why-section__cta {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
     background: var(--color-primary);
     color: var(--color-black);
@@ -1229,6 +1313,11 @@ body{
     font-size: 16px;
     text-transform: uppercase;
     transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+    min-width: fit-content;
+    visibility: visible;
+    opacity: 1;
 }
 
 .why-section__cta-icon {
@@ -1252,7 +1341,7 @@ body{
 }
 
 .why-section__title-line {
-    font-size: clamp(32px, 5vw, 64px);
+    font-size: clamp(26px, 5vw, 64px);
     color: var(--color-white);
     display: block;
 }
@@ -1448,10 +1537,10 @@ body{
     font-family: var(--font-benzin);
     font-weight: var(--font-weight-bold);
     font-size: clamp(28px, 5vw, 60px);
-    color: var(--color-primary);
     text-transform: uppercase;
     line-height: 1.1;
     margin: 0;
+    color: var(--color-white);
 }
 
 .works-section__cards {
@@ -2998,7 +3087,7 @@ body{
     }
     
     .result__title{
-        font-size: clamp(28px, 8vw, 48px);
+        font-size: 30px !important;
     }
     
     .advantages__cards{
@@ -3019,13 +3108,17 @@ body{
     
     .tariff__price-block{
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 16px;
     }
     
     .tariff__timer{
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
+    }
+    
+    .tariff__cta {
+        height: 70px;
     }
     
     .reviews__header {
@@ -3054,6 +3147,49 @@ body{
         gap: 20px;
         align-items: center;
         justify-content: center;
+    }
+    
+    /* Раскрываем все карточки на мобильных */
+    .program__card {
+        position: relative;
+    }
+    
+    .program__card-content {
+        max-height: 2000px !important;
+        padding: 0 24px 24px 24px !important;
+        overflow: visible !important;
+    }
+    
+    .program__card-icon {
+        transform: rotate(90deg) !important;
+    }
+    
+    /* Фон под блоками на мобильных */
+    .program {
+        position: relative;
+        background-color: var(--color-black);
+    }
+    
+    .program::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        background-image: url('../img/why-img-mobile.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0;
+        pointer-events: none;
+    }
+    
+    .program .container {
+        position: relative;
+        z-index: 1;
     }
     
     /* Contact Form Mobile */
@@ -3093,7 +3229,7 @@ body{
 
     .autolayout_title {
         font-family: var(--font-benzin);
-        font-size: 32px;
+        font-size: 30px !important;
         font-weight: var(--font-weight-bold);
         line-height: 120%;
         color: var(--color-white);
@@ -3160,6 +3296,7 @@ body{
     .header__title {
 
         text-align: left;
+        max-width: 180px;
     }
     
     .header__hero-wrapper {
@@ -3182,7 +3319,7 @@ body{
     }
     
     .header__title {
-        font-size: clamp(32px, 8vw, 64px);
+        font-size: 30px !important;
     }
     
     .header__description {
@@ -3238,10 +3375,46 @@ body{
     }
     
     .header__hero-cta {
+        position: fixed !important;
+        bottom: 16px !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        width: 100% !important;
+        max-width: 327px !important;
+        display: inline-flex !important;
+        font-size: 16px;
+        padding: 14px 24px;
+        height: 72px;
+        justify-content: center;
+        margin-top: 0 !important;
+        box-sizing: border-box;
+        z-index: 1000 !important;
+        background: var(--color-primary) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .header__bottom-cta {
+        display: none !important;
+    }
+    
+    /* Отступ снизу для body, чтобы контент не перекрывался кнопкой */
+    body {
+        padding-bottom: 100px; /* 72px высота кнопки + 16px отступ снизу + 12px запас */
+    }
+    
+    .header__bottom-cta__button {
         width: 100%;
         max-width: 100%;
-        font-size: clamp(14px, 4vw, 18px);
         padding: 14px 24px;
+        font-size: 16px;
+    }
+    
+    .header__bottom-cta--sticky {
+        bottom: 16px !important;
+        max-width: calc(100% - 32px) !important;
+        padding: 12px 20px !important;
     }
     
     .header__bonus-image {
@@ -3250,20 +3423,20 @@ body{
     }
     
     .header__bonus-text {
-        font-size: clamp(12px, 3vw, 14px);
+        font-size: 16px;
+        text-align: left;
     }
     
     .header__bonus-block {
         max-width: 100%;
-    }
-    
-    .header__hero-cta {
-        width: 100%;
-        justify-content: center;
+        margin-bottom: 0;
+        height: auto;
+        min-height: 112px;
     }
     
     .header__bottom {
         padding-top: 100px;
+        gap: 24px;
     }
     
     .faq__header {
@@ -3345,6 +3518,22 @@ body{
         text-align: center;
     }
     
+    /* Фоновое изображение для мобильных устройств на всю высоту */
+    .why-section {
+        position: relative;
+    }
+    
+    .why-section::before {
+        background-image: url('../img/why-img-mobile.png') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        height: 100% !important;
+        min-height: 100vh !important;
+    }
+    
     .why-section__benefits {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -3353,31 +3542,74 @@ body{
         max-width: 100%;
     }
     
-    .why-section__title-line {
-        font-size: clamp(28px, 8vw, 56px);
-    }
-    
     .why-section__benefit {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         text-align: left;
+        gap: 16px;
+    }
+    
+    /* 01: фото слева */
+    #benefit-01 {
+        flex-direction: row;
+    }
+    
+    /* 02: фото справа */
+    #benefit-02 {
+        flex-direction: row-reverse;
+    }
+    
+    /* 03: фото слева */
+    #benefit-03 {
+        flex-direction: row;
+    }
+    
+    /* 04: фото справа */
+    #benefit-04 {
+        flex-direction: row-reverse;
+    }
+    
+    .why-section__benefit-number {
+        flex-shrink: 0;
+        width: auto;
     }
     
     .why-section__benefit-number-img {
-        height: clamp(80px, 20vw, 150px);
+        height: clamp(60px, 15vw, 100px);
+        width: auto;
     }
     
     .why-section__benefit-content {
         align-items: flex-start;
         text-align: left;
+        flex: 1;
+        min-width: 0;
     }
     
     .why-section__benefit-title {
         text-align: left;
+        font-size: clamp(16px, 4vw, 20px);
     }
     
     .why-section__benefit-text {
         text-align: left;
+        font-size: clamp(12px, 3vw, 14px);
+    }
+    
+    .why-section__bottom {
+        margin-top: 32px;
+        padding: 16px 0;
+    }
+    
+    .why-section__bottom--sticky {
+        bottom: 16px;
+        max-width: calc(100% - 32px);
+        padding: 12px 20px;
+    }
+    
+    .why-section__cta {
+        padding: 10px 20px;
+        font-size: 14px;
     }
     
     .benefits-section__benefits {
@@ -3386,8 +3618,9 @@ body{
     }
     
     
+    .benefits-section__title,
     .benefits-section__title-line {
-        font-size: clamp(28px, 8vw, 56px);
+        font-size: 30px !important;
     }
     
     .works-section__cards {
@@ -3470,13 +3703,14 @@ body{
         height: auto;
     }
     
-    .header__hero-cta {
+    .header__hero-cta--mobile {
         font-size: 16px;
         padding: 14px 24px;
+        margin-top: 12px;
     }
     
     .faq__title {
-        font-size: clamp(28px, 10vw, 48px);
+        font-size: 30px !important;
         text-align: center;
     }
     
@@ -3499,8 +3733,32 @@ body{
     .program__card-title{
         padding: 24px;
     }
-    .header__bottom-cta__button{
-        font-size: 13px;
+    .header__hero-cta {
+        position: fixed !important;
+        bottom: 12px !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        max-width: 327px !important;
+        margin-top: 0 !important;
+        padding: 12px 16px;
+        font-size: 14px;
+        height: 60px;
+        z-index: 1000 !important;
+        background: var(--color-primary) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    /* Отступ снизу для контента, чтобы кнопка не перекрывала */
+    body {
+        padding-bottom: 84px; /* 60px высота кнопки + 12px отступ снизу + 12px запас */
+    }
+    
+    /* Убираем отступ снизу у хедера, так как кнопка fixed */
+    .header {
+        padding-bottom: 0;
     }
 }
 
@@ -3639,6 +3897,7 @@ body{
     position: relative;
     width: 100%;
     overflow: hidden;
+    padding: 10px;
 }
 
 .reviews__slider .swiper-wrapper {
