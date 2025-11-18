@@ -3,9 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewsSwiper = new Swiper('.reviews__slider', {
         direction: 'horizontal',
         slidesPerView: 1,
-        spaceBetween: 30,
+        spaceBetween: 0, // Без отступов на мобильных для полной ширины
         loop: false,
-        centeredSlides: false,
+        centeredSlides: false, // Не центрируем, так как слайд на всю ширину
+        watchOverflow: true,
+        resistance: true,
+        resistanceRatio: 0,
+        slideToClickedSlide: false,
         
         pagination: {
             el: '.swiper-pagination',
@@ -17,11 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 slidesPerView: 2,
                 spaceBetween: 30,
                 centeredSlides: false,
+                centeredSlidesBounds: false,
+                resistanceRatio: 0.85,
             },
             1200: {
                 slidesPerView: 3,
                 spaceBetween: 30,
                 centeredSlides: false,
+                centeredSlidesBounds: false,
+                resistanceRatio: 0.85,
             }
         }
     });
