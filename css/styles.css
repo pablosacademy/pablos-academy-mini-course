@@ -2151,11 +2151,13 @@ body{
 
 .tariff__bonus-image{
     flex-shrink: 0;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .tariff__bonus-img{
