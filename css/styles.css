@@ -194,7 +194,7 @@ body{
     gap: 10px;
     background: var(--color-primary);
     color: var(--color-white);
-    padding: 10px 20px;
+    padding: 5px 15px;
     border-radius: 8px;
     font-family: var(--font-benzin);
     font-weight: var(--font-weight-bold);
