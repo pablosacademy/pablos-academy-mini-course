@@ -2811,9 +2811,7 @@ body{
     flex-shrink: 0;
 }
 
-.about-mentor-info-help > div:last-child {
-    margin-top: 43px;
-}
+
 
 .about-mentor-info-help > div:last-child a {
     display: flex;
