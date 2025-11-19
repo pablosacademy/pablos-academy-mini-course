@@ -2140,7 +2140,7 @@ body{
     background-blend-mode: plus-lighter;
     mix-blend-mode: normal;
     backdrop-filter: blur(5.5px);
-    border-radius: 50px;
+    border-radius: 20px;
     padding: 20px;
     display: flex;
     align-items: center;
