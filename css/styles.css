@@ -168,7 +168,7 @@ body{
     align-items: center;
     margin-top: auto;
     margin-bottom: auto;
-    padding-top: 60px;
+    padding-top: 50px;
     gap: 40px;
 }
 
@@ -3486,7 +3486,7 @@ body{
     
     /* Отступ снизу для body, чтобы контент не перекрывался кнопкой */
     body {
-        padding-bottom: 100px; /* 72px высота кнопки + 16px отступ снизу + 12px запас */
+        padding-bottom: 50px; /* 72px высота кнопки + 16px отступ снизу + 12px запас */
     }
     
     .header__bottom-cta__button {
@@ -3519,7 +3519,7 @@ body{
     }
     
     .header__bottom {
-        padding-top: 100px;
+        padding-top: 50px;
         gap: 24px;
     }
     
