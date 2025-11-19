@@ -1481,7 +1481,7 @@ body{
 .benefits-section__benefit-text {
     font-family: var(--font-space-grotesk);
     font-size: clamp(14px, 2vw, 16px);
-    color: #A3A3A3;
+    color: #FFFFFF;
     line-height: 1.5;
     margin: 0;
 }
