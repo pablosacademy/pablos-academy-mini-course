@@ -2166,7 +2166,7 @@ body{
 
 .tariff__bonus-text{
     font-family: var(--font-space-grotesk);
-    font-size: clamp(14px, 1.5vw, 14px);
+    font-size: clamp(12px, 1.5vw, 14px);
     color: var(--color-white);
     line-height: 1.5;
     margin: 0;
